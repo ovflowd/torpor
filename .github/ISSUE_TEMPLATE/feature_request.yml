@@ -1,0 +1,14 @@
+name: Feature request or question
+description: An idea, a desktop Torpor should support, or something the docs don't make clear
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What would you like, or what is unclear?
+      description: Say what you are trying to do, not only the change you have in mind.
+    validations:
+      required: true
+  - type: textarea
+    id: tried
+    attributes:
+      label: What have you tried?

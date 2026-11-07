@@ -1,0 +1,17 @@
+# Pairing keys, torpor.conf copies and captures from real PCs (hostnames, MACs, monitor serials): never commit them
+key
+*.key
+torpor.conf
+local/
+
+__pycache__/
+*.egg-info/
+*.pyz
+build/
+dist/
+.venv/
+.venv-*/
+.mypy_cache/
+.coverage
+.pytest_cache/
+.ruff_cache/

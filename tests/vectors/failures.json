@@ -1,0 +1,228 @@
+{
+  "stale_key": {
+    "about": "The PC holds an old key. It rejects Home Assistant's proof and never sends auth, so no ban.",
+    "agent_key": "c8e51ea5530f4a28a62ad89232ff3635491ff1dc8c302646526a32b6cab23a9c",
+    "ha_key": "7f635ff57f6ccafb16ba96b01d62d416faae08ff97f62b2d99f29393a0280ee2",
+    "hello": "{\"type\":\"hello\",\"proto\":1,\"agent_id\":\"1f399f30-a3d9-488e-a63c-cbeb7333a961\",\"agent\":\"0.1.0\",\"nonce\":\"SHOq98VNpdeX3DdKqVdQSAoNTXI9sqmAQGCslj5XiuI=\",\"epk\":\"4Sg9DXEGmOBKh85hZ7re9ib9ISMvyVXGstnLzWKFqmo=\"}",
+    "challenge": "{\"type\":\"challenge\",\"proto\":1,\"nonce\":\"AgYxRR1+rJ2pJxigY0leFbP617jJiyjIRbmoCMnt214=\",\"epk\":\"9//ppEg15cRkoAerltFswdpEoEj6EwlTW4pf4qCIZXk=\",\"proof\":\"yA1YLEQG2mmGM15jAASFpvOovd+zh8S2LGmyp3jODxk=\"}",
+    "agent_error": {
+      "close": 4401,
+      "ban": false
+    }
+  },
+  "unknown_agent": {
+    "about": "No entry has this agent_id. Home Assistant answers with a decoy; nothing counts toward a ban.",
+    "challenge": "{\"type\":\"challenge\",\"proto\":1,\"nonce\":\"AgYxRR1+rJ2pJxigY0leFbP617jJiyjIRbmoCMnt214=\",\"epk\":\"9//ppEg15cRkoAerltFswdpEoEj6EwlTW4pf4qCIZXk=\",\"proof\":\"Zt7FOLBlMlS96ON9b2a/6l1+8u5gkeIyzK2RlauXCC0=\"}",
+    "agent_error": {
+      "close": 4401,
+      "ban": false
+    },
+    "auth": "{\"type\":\"auth\",\"proof\":\"jJCfu5qYGFJ0GwMRwl8C8uMxOWye+4F2vjMs5KqUJ4E=\"}",
+    "ha_error": {
+      "close": 4401,
+      "ban": false
+    }
+  },
+  "unknown_pair_id": {
+    "about": "No pending pairing has this pair_id (expired, used, or a mistyped code).",
+    "challenge": "{\"type\":\"pair_challenge\",\"proto\":1,\"nonce\":\"AgYxRR1+rJ2pJxigY0leFbP617jJiyjIRbmoCMnt214=\",\"epk\":\"9//ppEg15cRkoAerltFswdpEoEj6EwlTW4pf4qCIZXk=\",\"proof\":\"0t2H/XyV6dZ6gEqRdcKeyBLpdUJQ0ctzeIMbJcrTTyU=\"}",
+    "agent_error": {
+      "close": 4401,
+      "ban": false
+    },
+    "ha_error": {
+      "close": 4401,
+      "ban": false
+    }
+  },
+  "wrong_agent_proof": {
+    "about": "A known agent_id with a wrong proof: the only case Home Assistant feeds to its ban counter.",
+    "auth": "{\"type\":\"auth\",\"proof\":\"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=\"}",
+    "ha_error": {
+      "close": 4401,
+      "ban": true
+    }
+  },
+  "wrong_pairing_proof": {
+    "about": "A known pair_id with a wrong proof counts toward the pairing's own limit, never a ban.",
+    "auth": "{\"type\":\"pair_auth\",\"proof\":\"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=\"}",
+    "ha_error": {
+      "close": 4401,
+      "ban": false
+    }
+  },
+  "low_order_epk": {
+    "about": "An all-zero X25519 key gives an all-zero shared secret and is refused.",
+    "hello": "{\"type\":\"hello\",\"proto\":1,\"agent_id\":\"1f399f30-a3d9-488e-a63c-cbeb7333a961\",\"agent\":\"0.1.0\",\"nonce\":\"SHOq98VNpdeX3DdKqVdQSAoNTXI9sqmAQGCslj5XiuI=\",\"epk\":\"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=\"}",
+    "ha_error": {
+      "close": 4400,
+      "ban": false
+    }
+  },
+  "bad_hellos": [
+    {
+      "text": "{\"type\": \"hello\", \"proto\": 2, \"agent_id\": \"1f399f30-a3d9-488e-a63c-cbeb7333a961\", \"agent\": \"0.1.0\", \"nonce\": \"SHOq98VNpdeX3DdKqVdQSAoNTXI9sqmAQGCslj5XiuI=\", \"epk\": \"4Sg9DXEGmOBKh85hZ7re9ib9ISMvyVXGstnLzWKFqmo=\"}",
+      "error": {
+        "close": 4426,
+        "ban": false
+      }
+    },
+    {
+      "text": "{\"type\": \"hello\", \"proto\": true, \"agent_id\": \"1f399f30-a3d9-488e-a63c-cbeb7333a961\", \"agent\": \"0.1.0\", \"nonce\": \"SHOq98VNpdeX3DdKqVdQSAoNTXI9sqmAQGCslj5XiuI=\", \"epk\": \"4Sg9DXEGmOBKh85hZ7re9ib9ISMvyVXGstnLzWKFqmo=\"}",
+      "error": {
+        "close": 4426,
+        "ban": false
+      }
+    },
+    {
+      "text": "{\"type\": \"hello\", \"agent_id\": \"1f399f30-a3d9-488e-a63c-cbeb7333a961\", \"agent\": \"0.1.0\", \"nonce\": \"SHOq98VNpdeX3DdKqVdQSAoNTXI9sqmAQGCslj5XiuI=\", \"epk\": \"4Sg9DXEGmOBKh85hZ7re9ib9ISMvyVXGstnLzWKFqmo=\"}",
+      "error": {
+        "close": 4426,
+        "ban": false
+      }
+    },
+    {
+      "text": "{\"type\": \"hello\", \"proto\": 1, \"agent_id\": \"not-a-uuid\", \"agent\": \"0.1.0\", \"nonce\": \"SHOq98VNpdeX3DdKqVdQSAoNTXI9sqmAQGCslj5XiuI=\", \"epk\": \"4Sg9DXEGmOBKh85hZ7re9ib9ISMvyVXGstnLzWKFqmo=\"}",
+      "error": {
+        "close": 4400,
+        "ban": false
+      }
+    },
+    {
+      "text": "{\"type\": \"hello\", \"proto\": 1, \"agent_id\": \"1F399F30-A3D9-488E-A63C-CBEB7333A961\", \"agent\": \"0.1.0\", \"nonce\": \"SHOq98VNpdeX3DdKqVdQSAoNTXI9sqmAQGCslj5XiuI=\", \"epk\": \"4Sg9DXEGmOBKh85hZ7re9ib9ISMvyVXGstnLzWKFqmo=\"}",
+      "error": {
+        "close": 4400,
+        "ban": false
+      }
+    },
+    {
+      "text": "{\"type\": \"hello\", \"proto\": 1, \"agent_id\": \"1f399f30-a3d9-488e-a63c-cbeb7333a961\", \"agent\": \"0.1.0\", \"nonce\": \"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==\", \"epk\": \"4Sg9DXEGmOBKh85hZ7re9ib9ISMvyVXGstnLzWKFqmo=\"}",
+      "error": {
+        "close": 4400,
+        "ban": false
+      }
+    },
+    {
+      "text": "{\"type\": \"hello\", \"proto\": 1, \"agent_id\": \"1f399f30-a3d9-488e-a63c-cbeb7333a961\", \"agent\": \"0.1.0\", \"nonce\": \"!!!!\", \"epk\": \"4Sg9DXEGmOBKh85hZ7re9ib9ISMvyVXGstnLzWKFqmo=\"}",
+      "error": {
+        "close": 4400,
+        "ban": false
+      }
+    },
+    {
+      "text": "{\"type\": \"hello\", \"proto\": 1, \"agent_id\": \"1f399f30-a3d9-488e-a63c-cbeb7333a961\", \"agent\": \"0.1.0\", \"nonce\": \"SHOq98VNpdeX3DdKqVdQSAoNTXI9sqmAQGCslj5XiuI=\", \"epk\": 5}",
+      "error": {
+        "close": 4400,
+        "ban": false
+      }
+    },
+    {
+      "text": "{\"type\": \"hello\", \"proto\": 1, \"agent_id\": \"1f399f30-a3d9-488e-a63c-cbeb7333a961\", \"agent\": \"\", \"nonce\": \"SHOq98VNpdeX3DdKqVdQSAoNTXI9sqmAQGCslj5XiuI=\", \"epk\": \"4Sg9DXEGmOBKh85hZ7re9ib9ISMvyVXGstnLzWKFqmo=\"}",
+      "error": {
+        "close": 4400,
+        "ban": false
+      }
+    },
+    {
+      "text": "{\"type\": \"hello\", \"proto\": 1, \"agent_id\": \"1f399f30-a3d9-488e-a63c-cbeb7333a961\", \"agent\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\", \"nonce\": \"SHOq98VNpdeX3DdKqVdQSAoNTXI9sqmAQGCslj5XiuI=\", \"epk\": \"4Sg9DXEGmOBKh85hZ7re9ib9ISMvyVXGstnLzWKFqmo=\"}",
+      "error": {
+        "close": 4400,
+        "ban": false
+      }
+    },
+    {
+      "text": "{\"type\": \"auth\", \"proto\": 1, \"agent_id\": \"1f399f30-a3d9-488e-a63c-cbeb7333a961\", \"agent\": \"0.1.0\", \"nonce\": \"SHOq98VNpdeX3DdKqVdQSAoNTXI9sqmAQGCslj5XiuI=\", \"epk\": \"4Sg9DXEGmOBKh85hZ7re9ib9ISMvyVXGstnLzWKFqmo=\"}",
+      "error": {
+        "close": 4400,
+        "ban": false
+      }
+    },
+    {
+      "text": "{\"type\": \"pair_hello\", \"proto\": 1, \"agent_id\": \"1f399f30-a3d9-488e-a63c-cbeb7333a961\", \"agent\": \"0.1.0\", \"pair_id\": \"NLyQzWc0LJs=\", \"hostname\": \"\", \"os\": \"Example Linux 1.0\", \"nonce\": \"SHOq98VNpdeX3DdKqVdQSAoNTXI9sqmAQGCslj5XiuI=\", \"epk\": \"4Sg9DXEGmOBKh85hZ7re9ib9ISMvyVXGstnLzWKFqmo=\"}",
+      "error": {
+        "close": 4400,
+        "ban": false
+      }
+    },
+    {
+      "text": "{\"type\": \"pair_hello\", \"proto\": 1, \"agent_id\": \"1f399f30-a3d9-488e-a63c-cbeb7333a961\", \"agent\": \"0.1.0\", \"pair_id\": \"NLyQzWc0LJs=\", \"hostname\": \"desk\\n\", \"os\": \"Example Linux 1.0\", \"nonce\": \"SHOq98VNpdeX3DdKqVdQSAoNTXI9sqmAQGCslj5XiuI=\", \"epk\": \"4Sg9DXEGmOBKh85hZ7re9ib9ISMvyVXGstnLzWKFqmo=\"}",
+      "error": {
+        "close": 4400,
+        "ban": false
+      }
+    },
+    {
+      "text": "{\"type\": \"pair_hello\", \"proto\": 1, \"agent_id\": \"1f399f30-a3d9-488e-a63c-cbeb7333a961\", \"agent\": \"0.1.0\", \"pair_id\": \"AAAAAAAAAAAA\", \"hostname\": \"desk\", \"os\": \"Example Linux 1.0\", \"nonce\": \"SHOq98VNpdeX3DdKqVdQSAoNTXI9sqmAQGCslj5XiuI=\", \"epk\": \"4Sg9DXEGmOBKh85hZ7re9ib9ISMvyVXGstnLzWKFqmo=\"}",
+      "error": {
+        "close": 4400,
+        "ban": false
+      }
+    },
+    {
+      "text": "[]",
+      "error": {
+        "close": 4400,
+        "ban": false
+      }
+    },
+    {
+      "text": "{",
+      "error": {
+        "close": 4400,
+        "ban": false
+      }
+    },
+    {
+      "text": "{\"type\":\"hello\",\"proto\":1,\"x\":NaN}",
+      "error": {
+        "close": 4400,
+        "ban": false
+      }
+    },
+    {
+      "text": "{\"type\": \"hello\", \"proto\": 1, \"agent_id\": \"1f399f30-a3d9-488e-a63c-cbeb7333a961\", \"agent\": \"0.1.0\", \"nonce\": \"SHOq98VNpdeX3DdKqVdQSAoNTXI9sqmAQGCslj5XiuI=\", \"epk\": \"4Sg9DXEGmOBKh85hZ7re9ib9ISMvyVXGstnLzWKFqmo=\", \"pad\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"}",
+      "error": {
+        "close": 4400,
+        "ban": false
+      }
+    }
+  ],
+  "frames": {
+    "about": "Opened by a fresh agent session for the session vector; each must close with 4400.",
+    "tampered": {
+      "frame": "010000000000000000f13bb6d847fa6d122f587beb8eff9af9473de341f6f32730322af5f03d93d14ae9c5d3de5392fab6af2f08ce4dae658c455f9540031947263b09419f31dea4a0adb41aad00caca5bac94bd3f99813b6ab5950dd2e394e8dbbb60d52eebd47f5115",
+      "error": {
+        "close": 4400,
+        "ban": false
+      }
+    },
+    "out_of_order": {
+      "frame": "0100000000000000014c5b073547825aabb7b2ca276231cc21be032bb3eaae4ac77d7e44ad8a3b63ecaf2107ba5689ff3cf9677348b04757a882f517290c69df44dfc0ae94982bad2cc583c33741b70859698f336342538b85b11242cee41f5e115a84331b00b427cc8d8c75e5ad101e1200ae483e61da0fa232871ada84408374b448c6ac8a0d7eb16ebd6828eb8d54f3e0a78969dab82c6f48d594a0d6fb2d25df4e3f6ff03cd585bb8c58c3952a865c41d295beaff00fff45a84bf5001aa72ccdb98ab9aa4f7837d625da650f9fc3b0a4c921f78194b64f1c05e11b0f1a9586e5f6c54e39db3ba4cc9d98ddc5c42a68c66ae3027e6ad936a3c184",
+      "error": {
+        "close": 4400,
+        "ban": false
+      }
+    },
+    "bad_version": {
+      "frame": "020000000000000000f13bb6d847fa6d122f587beb8eff9af9473de341f6f32730322af5f03d93d14ae9c5d3de5392fab6af2f08ce4dae658c455f9540031947263b09419f31dea4a0adb41aad00caca5bac94bd3f99813b6ab5950dd2e394e8dbbb60d52eebd47f5114",
+      "error": {
+        "close": 4400,
+        "ban": false
+      }
+    },
+    "too_short": {
+      "frame": "010000000000000000f13bb6d847fa6d122f587beb8eff9a",
+      "error": {
+        "close": 4400,
+        "ban": false
+      }
+    },
+    "own_frame": {
+      "frame": "010000000000000000aa1298250c03f9a1f9dd621cdf7d24d878d5348b6efec9afc5fe85ab48d0d51913e3deff54a6647c78d5b7bf8cc9061e1d608f186a55815f01e8535f99cbce12bde53cabd4f3eb9ce4ced5ab6abe90df17f6ef3b6c8c3bdeae989fa7d22f4933f220d44c45b5d0a703bf2107aa4afdcf95d47259b45945f3bf102fc12a30526c3991b8bd47a30cff82f0acef1e4c35f70907937ea55bd2503ebd82b32727ed73a308540b280d853a7f913665fd8b472d75f4a6b9d9b5e9637926ca9bd3bf6bdef06cad28bdead7f9be75e7a4c029eed945bf32963c9b1181ee969da0a2e1637f1cc3278b9db30ac8eb28c7e5b7d0df324653f40ab64ede6129ea80d4d9edb6a7b846cee9bd0f62248f27945956a52d2edafc706da0b80427ea59d4890cc3a9eb44d5c6b6ced4e194a98b70453589a8c6a14822788ba8cf66821a56c0e17a88f49ed2df36ca6a25a32aa2dee17ade2a11a73dfb6621d372b70205710c0f43fb8846a730b9117a6f75d8f09c815b3315f8da8e463baf8e378e04c98572cca1c2e5fc915ae2a7418e2098a62d16cec807efd347de9a305ce1ac4bb77e3d51d86c2977f871b039afcc3efab48571bbf3d546b7cfe780d01d1b883e038922e471524c42578a254ea773681397493116bf68a148c53064fa6ed8a06d925600ea4d823def5afbe9c8ca9146b4aa83fc95286053c474c167ad0b1878d09c79bfe833bbeb50686247e60b56e869ee1c182a029906a157adea7fad2d240400da2cbdf523187531d9fc7f9156d846a3f15d4923fd121bdef60d5202b7a7d15bdea9e50b4b1b66dc3b1f232205153b67afa60eff9e7b8367324878e82df747bf8842ac5c7c73ed210ab09ffa4a69f60b7c63a3c15f866870716fcc262373578e12cc4db5d7ed39ed7f2bc60e2aae7b7454e693dea4afda1839622982a929aa1fc3472a827f391cca4b414cf1647a7835323cb4b45cf8e63a8596d1a8c4f5aa734fa4fd9e46c0d3b9ec2b2e4b9d56b4399b2ad1a098f76b3dbadf5a5a3c557e9a0dd39ec6c517844f846a59d726cf75380711b5a7f9cc5e3e429358a963194ec936ab78d9d9d9f6b4451335f6d3f6568ab37b586618c1ede3e36c75e62623445d963158eec3949662c10760a15c4e6d354142a9d6c877734d0a32ed2ae1ab61596934dbcd841c9819835e77f58e246074a552c0ebc3405068f8c67598c1908621b8d76f527a5cf19a50490060f1a63d338f49734ccd3edbd4ea45fd164afbc4b72f8b3254ffbffb976a6d45d765c9abe462cee68ccf5f4d1b103478c82fcff2deb6c5375c9f95c2ff601853a14c220d21d6aa0c5462ef0087a0ac9e9e1329b5cfbcc2916b00997d06f3f0758dcea2cb15728a",
+      "error": {
+        "close": 4400,
+        "ban": false
+      }
+    }
+  }
+}

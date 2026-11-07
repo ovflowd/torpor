@@ -1,0 +1,49 @@
+name: Bug report
+description: The agent or torporctl does not do what the docs say
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Never paste your pairing code or `~/.config/torpor/key`. `torporctl status --json` and
+        `torporctl doctor --json` hold neither, but they show your host name and MAC addresses:
+        replace them if you like.
+  - type: input
+    id: version
+    attributes:
+      label: Torpor version and commit
+      description: The output of `torporctl --version`, and the commit or release you installed.
+    validations:
+      required: true
+  - type: input
+    id: system
+    attributes:
+      label: Distribution, desktop and session
+      placeholder: Debian 13, GNOME 48 on Wayland
+    validations:
+      required: true
+  - type: input
+    id: ha
+    attributes:
+      label: Home Assistant and ha-torpor versions
+      placeholder: 2026.11.0, ha-torpor 0.1.0
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened, and what did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: doctor
+    attributes:
+      label: torporctl doctor --json
+      render: json
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: The agent's log around the problem
+      description: From `torporctl logs -n 200`. Set `torporctl config set agent.log-level debug` for more; it never logs keys or frames.
+      render: text

@@ -1,0 +1,80 @@
+{
+  "hkdf": {
+    "source": "RFC 5869 A.1",
+    "ikm": "0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b",
+    "salt": "000102030405060708090a0b0c",
+    "info": "f0f1f2f3f4f5f6f7f8f9",
+    "length": 42,
+    "prk": "077709362c2e32df0ddc3f0dc47bba6390b6c73bb50f9c3122ec844ad7c2b3e5",
+    "okm": "3cb25f25faacd57a90434f64d0362f2a2d2d0a90cf1a5a4c5db02d56ecc4c5bf34007208d5b887185865"
+  },
+  "x25519": {
+    "source": "RFC 7748 6.1",
+    "alice_private": "77076d0a7318a57d3c16c17251b26645df4c2f87ebc0992ab177fba51db92c2a",
+    "alice_public": "8520f0098930a754748b7ddcb43ef75a0dbf3a0d26381af4eba4a98eaa9b4e6a",
+    "bob_private": "5dab087e624a8a4b79e17f8b83800ee66f3bb1292618b6fd1c2f8b27ff88e0eb",
+    "bob_public": "de9edb7d7b7dc1b4d35b61c2ece435373f8343c85b78674dadfc7e146f882b4f",
+    "shared": "4a5d9d5ba4ce2de1728e3bf480350f25e07e21c947d19e3376f09b3c1e161742"
+  },
+  "chacha20poly1305": {
+    "source": "RFC 8439 2.8.2",
+    "key": "808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9f",
+    "nonce": "070000004041424344454647",
+    "aad": "50515253c0c1c2c3c4c5c6c7",
+    "plaintext": "4c616469657320616e642047656e746c656d656e206f662074686520636c617373206f66202739393a204966204920636f756c64206f6666657220796f75206f6e6c79206f6e652074697020666f7220746865206675747572652c2073756e73637265656e20776f756c642062652069742e",
+    "ciphertext": "d31a8d34648e60db7b86afbc53ef7ec2a4aded51296e08fea9e2b5a736ee62d63dbea45e8ca9671282fafb69da92728b1a71de0a9e060b2905d6a5b67ecd3b3692ddbd7f2d778b8c9803aee328091b58fab324e4fad675945585808b4831d7bc3ff4def08e4b7a9de576d26586cec64b6116",
+    "tag": "1ae10b594f09e26a7e902ecbd0600691"
+  },
+  "lp": [
+    {
+      "parts": [
+        "",
+        "ab"
+      ],
+      "hex": "00000000000000026162"
+    },
+    {
+      "parts": [
+        "torpor"
+      ],
+      "hex": "00000006746f72706f72"
+    }
+  ],
+  "agent_id": {
+    "app_id": "570fe902-bf3b-439f-b2eb-3dfaf29fb91b",
+    "machine_id": "0123456789abcdef0123456789abcdef",
+    "agent_id": "1f399f30-a3d9-488e-a63c-cbeb7333a961",
+    "checked_with": "systemd 262: systemd-id128 machine-id --uuid --app-specific=<app_id>"
+  },
+  "bad_machine_ids": [
+    "",
+    "00000000000000000000000000000000",
+    "0123",
+    "g123456789abcdef0123456789abcdef",
+    "0123456789abcdef0123456789abcdef00"
+  ],
+  "code": {
+    "bytes": "63fb2fb44377edaacd404d72cc831b3b2f4ce6bc",
+    "text": "trp1-mp5s-7ncd-o7w2-vtka-jvzm-zay3-hmxu-zzv4",
+    "pair_id": "NLyQzWc0LJs=",
+    "code_key": "8ced70948f8dc5044aa10907b5f0b2f18cb5b69741488bd04c3fd14890a5d638",
+    "accepted": [
+      "trp1-mp5s-7ncd-o7w2-vtka-jvzm-zay3-hmxu-zzv4",
+      "TRP1-MP5S-7NCD-O7W2-VTKA-JVZM-ZAY3-HMXU-ZZV4",
+      "trp1 mp5s 7ncd o7w2 vtka jvzm zay3 hmxu zzv4",
+      "mp5s-7ncd-o7w2-vtka-jvzm-zay3-hmxu-zzv4"
+    ],
+    "rejected": [
+      "",
+      "trp1-",
+      "trp1-mp5s-7ncd-o7w2-vtka-jvzm-zay3-hmxu-zzv",
+      "trp1-mp5s-7ncd-o7w2-vtka-jvzm-zay3-hmxu-zzv4a",
+      "trp1-mp5s-7ncd-o7w2-vtk1-jvzm-zay3-hmxu-zzv4!",
+      "trp2-mp5s-7ncd-o7w2-vtka-jvzm-zay3-hmxu-zzv4"
+    ]
+  },
+  "fingerprint": {
+    "raw": "0001020304",
+    "text": "AAAQ-EAYE"
+  }
+}

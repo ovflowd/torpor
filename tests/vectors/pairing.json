@@ -1,0 +1,142 @@
+{
+  "inputs": {
+    "machine_id": "0123456789abcdef0123456789abcdef",
+    "agent_id": "1f399f30-a3d9-488e-a63c-cbeb7333a961",
+    "agent": "0.1.0",
+    "agent_nonce": "4873aaf7c54da5d797dc374aa95750480a0d4d723db2a9804060ac963e578ae2",
+    "agent_private": "6e3557942026fed4e8fa6aade4360cc2e2af222d9a87c08a1e64150ec7a9a59c",
+    "ha_nonce": "020631451d7eac9da92718a063495e15b3fad7b8c98b28c845b9a808c9eddb5e",
+    "ha_private": "20239779b06bd7f98d7ee7cf4790839cc249194e8abc502ba50a5adeefceb21b",
+    "code": "63fb2fb44377edaacd404d72cc831b3b2f4ce6bc",
+    "code_text": "trp1-mp5s-7ncd-o7w2-vtka-jvzm-zay3-hmxu-zzv4",
+    "hostname": "desk",
+    "os": "Example Linux 1.0"
+  },
+  "hello": "{\"type\":\"pair_hello\",\"proto\":1,\"agent_id\":\"1f399f30-a3d9-488e-a63c-cbeb7333a961\",\"agent\":\"0.1.0\",\"pair_id\":\"NLyQzWc0LJs=\",\"hostname\":\"desk\",\"os\":\"Example Linux 1.0\",\"nonce\":\"SHOq98VNpdeX3DdKqVdQSAoNTXI9sqmAQGCslj5XiuI=\",\"epk\":\"4Sg9DXEGmOBKh85hZ7re9ib9ISMvyVXGstnLzWKFqmo=\"}",
+  "challenge": "{\"type\":\"pair_challenge\",\"proto\":1,\"nonce\":\"AgYxRR1+rJ2pJxigY0leFbP617jJiyjIRbmoCMnt214=\",\"epk\":\"9//ppEg15cRkoAerltFswdpEoEj6EwlTW4pf4qCIZXk=\",\"proof\":\"PllaqJbgWNkuXKFronLoEwTvG/DV+yYSdf3kyde+q18=\"}",
+  "auth": "{\"type\":\"pair_auth\",\"proof\":\"CJ0xh9A5g/T+4IOsI+YxExHi/MzOuOWbPLI7+uY/nrE=\"}",
+  "dh": "488e94b034cfa368d721f50ee2c9d0044f48d91855f65f0db74cbbc1af2dae77",
+  "transcript": "c896111eb3b42bb22078358217e1f073641c5974539bb29750648e71c041a113",
+  "keys": {
+    "ha_proof": "8634808d8343b0e4a2797917883dbfec2166fe7f55f6098c3107e5434d305755",
+    "agent_proof": "ced2f33817989f62d056ee49f8dc96ca1e6c8329968bf84159c6b00e636d1bf1",
+    "agent_to_ha": "711f001a65d19e764ce3eb5387454f5ce43eabeee927d32c538931fac2350669",
+    "ha_to_agent": "68a913b39c7602fe47991b07bbba4d52b11a9e5cacae8f1b9f07ede96172736b"
+  },
+  "pair_id": "NLyQzWc0LJs=",
+  "fingerprint": "TGVU-FESI",
+  "pairing_key": "f08fdeff5f5dbab51689b01219c0aea9ca67d85b885a46b8c07a9416923ffb7d",
+  "frames": [
+    {
+      "from": "ha",
+      "seq": 0,
+      "message": {
+        "type": "auth_ok",
+        "pairing": true,
+        "ha_version": "2026.11.0",
+        "integration": "0.1.0"
+      },
+      "frame": "010000000000000000dd260c8a32ae02d60a40afebc2b58b8219ac8bd92a7a894d1b99a0641868a4289e94318bc43b16588baac3f53be36fac397878685097c1de46d90b81544d9a1b3bbb814ba7d747a82ee15bdb91bbd6e2a1a2f1ce0dde2b3da3b02a1c132c3ecb"
+    },
+    {
+      "from": "agent",
+      "seq": 0,
+      "message": {
+        "type": "capabilities",
+        "observe_only": false,
+        "host": {
+          "hostname": "desk",
+          "os": "Example Linux 1.0",
+          "kernel": "6.17.0-example",
+          "agent": "0.1.0",
+          "python": "3.14.0",
+          "vendor": "Example Computers",
+          "model": "Tower 5",
+          "desktop": "KDE",
+          "linger": true
+        },
+        "modules": {
+          "core": {
+            "enabled": true,
+            "available": true,
+            "backend": "logind",
+            "problems": []
+          },
+          "power": {
+            "enabled": true,
+            "available": true,
+            "backend": "logind",
+            "problems": [],
+            "actions": {
+              "lock": true,
+              "suspend": true,
+              "hibernate": false,
+              "poweroff": false,
+              "reboot": false
+            }
+          },
+          "keep_awake": {
+            "enabled": true,
+            "available": true,
+            "backend": "kde",
+            "problems": [],
+            "actions": {
+              "keep_awake": true
+            }
+          },
+          "wake": {
+            "enabled": true,
+            "available": true,
+            "backend": null,
+            "problems": [],
+            "nics": [
+              {
+                "name": "enp5s0",
+                "mac": "02:00:5e:10:00:01",
+                "kind": "ethernet",
+                "wol": "armed",
+                "primary": true
+              }
+            ]
+          },
+          "brightness": {
+            "enabled": true,
+            "available": true,
+            "backend": null,
+            "problems": [],
+            "actions": {
+              "brightness": true
+            },
+            "displays": [
+              {
+                "id": "3f2a9c1b04de",
+                "label": "Example 27Q",
+                "backend": "kde",
+                "internal": false
+              }
+            ]
+          }
+        }
+      },
+      "frame": "010000000000000000fcc8301c30ee9c8817e708d2decd73ae3397398919a3ca722f2260b98a4ef4d26717052ca7fbc307674c1819791e1910146ffcd0b178a7fe886e864d1955ee0e5fff46f4440817d54fa4b65cb0079b85929eee5de05a9fbcc189655354cc87e0dfe3300ab62a60aaf8f2f5430f2f7f7bb02cd1bc97b31175e1399e25f0c3acc705ead2e603dcfb0fb4d2c6a9aad4ae3cbe212dfdafc95a13c4e82e261027a411f4d124f83a87e44008759b182beb5605c345f647863a6dd4c0e82d6ecd5bedc821310c2959098065a6e40e6a8cde26fc5ba8955ab65d1a1521ca03c5579123841d4a4c6f024ba168a66a3a036c66ec1e71dc0e2d13d76b27c6ee8ce661c29d5ce99a0f736e48e7e19641e03c45598b71d7bd112b032985c0dea8650b291482ee7c79b251c9b79ff8b59116d163af59ef6743277b137db28dbbb86528b229f8a5da63a2e9d8cdd814436a67a510877ae1d07f4b8913c856eb90a6d9fd2bec29f1751267772f37f6cbc0750396415bb21fdd404344450bf40bb92a8fc2963993c0fa424e1d4cddc3c7bbe6d60bfcb5fc3ecc79e1567080b9655c647cfadfc68d736144cb0fa71c20227a7e12585a276189003c1668f765d2e17db495a41410d0fe17145c5d44af7d9a665f8a218ecadcfc632deed4bc7f6d06fcec8ad4e369fa7da1a047fce0ef146d692b72a37fdd5a8fafb9d26c01b3719b2e6e8a3da5ba9105dc8ea111dc0734136ca042c85deb16f637ffee61b15dfbca4772fae7b2e64565b175caaff82475f20ef09d64c551042a247d5331b0417588ac5d870dbf83af999a231db0669c418a3a77d4bee2f94f8e5461a2c896dd2a2f5441fd776f01349cf6d5fb5c092733df5d4b733edce40da0240ca72e622dd06d1a1a6c217a1c0384bc5eb7a4f83891be4eb3027d09035d664ad6813fc21a1915761e8a63abe9d75b9b86f4084ac099f28b4a398682022431001009ab467d45a91c36bf71e46b7c451f5d46e7b4c0d198996de2f0cc29973e6898828a50bc0f9a192cfc52d887ef24d0794447f2b4f5ba79163c99dc1d252643a3d6c0ecc6da9688c4b3a62492b185a5c5634465c071eb309c21c1759d1f6d22010ae19a10e1faadad297dc825abf659c3d9cfb73c384c768de4658a89720fa9bd8328bddc401a8cdc5f2b4893fe7067c99e80510befc92b225a91852db099ecd27f3f92c49c804220166f8baceb0bf0aa00365cc6845c0554534f6904c5342f0628bfc3cd6aa98e1448facab317ff8e3634f1b8da6d5061a09ecce2d8e8e5cbc6947e4d813a7c883862c1c30c4451f41bca3673fd6e63df7e60a7dfdccdb2ff58496cb5a34cfce6cf2f632beb0b8f2c008672da0264eb3f7693c7"
+    },
+    {
+      "from": "ha",
+      "seq": 1,
+      "message": {
+        "type": "paired",
+        "id": "p1"
+      },
+      "frame": "010000000000000001bdc47fd8fce2dec67e45ce243477c1785960e3c0412ad56761b46353f3968f4ddf9bf9483a1fcd141f5958"
+    },
+    {
+      "from": "agent",
+      "seq": 1,
+      "message": {
+        "type": "ack",
+        "id": "p1"
+      },
+      "frame": "010000000000000001ee1d6971efef323e0b87c9dd6908f73c0c1f362e56abb0c28e770d861346b622b39d909f343dda3b"
+    }
+  ]
+}

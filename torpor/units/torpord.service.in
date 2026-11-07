@@ -1,0 +1,16 @@
+[Unit]
+Description=Torpor agent: lets Home Assistant see, sleep, wake and dim this PC
+Documentation=https://github.com/ovflowd/torpor
+
+[Service]
+Type=exec
+ExecStart=@PYTHON@ -I -B %h/.local/lib/torpor/torpor.pyz agent
+Restart=always
+RestartSec=10
+RuntimeDirectory=torpor
+RuntimeDirectoryPreserve=yes
+Environment=GSETTINGS_BACKEND=memory
+SyslogIdentifier=torpord
+
+[Install]
+WantedBy=default.target

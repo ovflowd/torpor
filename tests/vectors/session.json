@@ -1,0 +1,316 @@
+{
+  "inputs": {
+    "machine_id": "0123456789abcdef0123456789abcdef",
+    "agent_id": "1f399f30-a3d9-488e-a63c-cbeb7333a961",
+    "agent": "0.1.0",
+    "agent_nonce": "4873aaf7c54da5d797dc374aa95750480a0d4d723db2a9804060ac963e578ae2",
+    "agent_private": "6e3557942026fed4e8fa6aade4360cc2e2af222d9a87c08a1e64150ec7a9a59c",
+    "ha_nonce": "020631451d7eac9da92718a063495e15b3fad7b8c98b28c845b9a808c9eddb5e",
+    "ha_private": "20239779b06bd7f98d7ee7cf4790839cc249194e8abc502ba50a5adeefceb21b",
+    "key": "7f635ff57f6ccafb16ba96b01d62d416faae08ff97f62b2d99f29393a0280ee2"
+  },
+  "hello": "{\"type\":\"hello\",\"proto\":1,\"agent_id\":\"1f399f30-a3d9-488e-a63c-cbeb7333a961\",\"agent\":\"0.1.0\",\"nonce\":\"SHOq98VNpdeX3DdKqVdQSAoNTXI9sqmAQGCslj5XiuI=\",\"epk\":\"4Sg9DXEGmOBKh85hZ7re9ib9ISMvyVXGstnLzWKFqmo=\"}",
+  "challenge": "{\"type\":\"challenge\",\"proto\":1,\"nonce\":\"AgYxRR1+rJ2pJxigY0leFbP617jJiyjIRbmoCMnt214=\",\"epk\":\"9//ppEg15cRkoAerltFswdpEoEj6EwlTW4pf4qCIZXk=\",\"proof\":\"yA1YLEQG2mmGM15jAASFpvOovd+zh8S2LGmyp3jODxk=\"}",
+  "auth": "{\"type\":\"auth\",\"proof\":\"jJCfu5qYGFJ0GwMRwl8C8uMxOWye+4F2vjMs5KqUJ4E=\"}",
+  "dh": "488e94b034cfa368d721f50ee2c9d0044f48d91855f65f0db74cbbc1af2dae77",
+  "transcript": "739a9ba25192321c54605edc796e799cf036129c4ded4c9937a3741ec658675b",
+  "keys": {
+    "ha_proof": "abfa0c3c008d4fd5a2c7393cb6473d056fa2d4bc24fce1924591931b5aef1c67",
+    "agent_proof": "560b79e6e97391358f399e139f8050db341b8e0ad397647218d09e9b8ee63980",
+    "agent_to_ha": "0e8bcb8c2da7de4958fe7517bd339aca1c9801de999b0ab70b931a8f3d1e5e3d",
+    "ha_to_agent": "df6613432360b2f2dede8d61e1dae92f605122245914b46d042f7df8a08f466c"
+  },
+  "frames": [
+    {
+      "from": "ha",
+      "seq": 0,
+      "message": {
+        "type": "auth_ok",
+        "pairing": false,
+        "ha_version": "2026.11.0",
+        "integration": "0.1.0"
+      },
+      "frame": "010000000000000000f13bb6d847fa6d122f587beb8eff9af9473de341f6f32730322af5f03d93d14ae9c5d3de5392fab6af2f08ce4dae658c455f9540031947263b09419f31dea4a0adb41aad00caca5bac94bd3f99813b6ab5950dd2e394e8dbbb60d52eebd47f5114"
+    },
+    {
+      "from": "agent",
+      "seq": 0,
+      "message": {
+        "type": "capabilities",
+        "observe_only": false,
+        "host": {
+          "hostname": "desk",
+          "os": "Example Linux 1.0",
+          "kernel": "6.17.0-example",
+          "agent": "0.1.0",
+          "python": "3.14.0",
+          "vendor": "Example Computers",
+          "model": "Tower 5",
+          "desktop": "KDE",
+          "linger": true
+        },
+        "modules": {
+          "core": {
+            "enabled": true,
+            "available": true,
+            "backend": "logind",
+            "problems": []
+          },
+          "power": {
+            "enabled": true,
+            "available": true,
+            "backend": "logind",
+            "problems": [],
+            "actions": {
+              "lock": true,
+              "suspend": true,
+              "hibernate": false,
+              "poweroff": false,
+              "reboot": false
+            }
+          },
+          "keep_awake": {
+            "enabled": true,
+            "available": true,
+            "backend": "kde",
+            "problems": [],
+            "actions": {
+              "keep_awake": true
+            }
+          },
+          "wake": {
+            "enabled": true,
+            "available": true,
+            "backend": null,
+            "problems": [],
+            "nics": [
+              {
+                "name": "enp5s0",
+                "mac": "02:00:5e:10:00:01",
+                "kind": "ethernet",
+                "wol": "armed",
+                "primary": true
+              }
+            ]
+          },
+          "brightness": {
+            "enabled": true,
+            "available": true,
+            "backend": null,
+            "problems": [],
+            "actions": {
+              "brightness": true
+            },
+            "displays": [
+              {
+                "id": "3f2a9c1b04de",
+                "label": "Example 27Q",
+                "backend": "kde",
+                "internal": false
+              }
+            ]
+          }
+        }
+      },
+      "frame": "010000000000000000aa1298250c03f9a1f9dd621cdf7d24d878d5348b6efec9afc5fe85ab48d0d51913e3deff54a6647c78d5b7bf8cc9061e1d608f186a55815f01e8535f99cbce12bde53cabd4f3eb9ce4ced5ab6abe90df17f6ef3b6c8c3bdeae989fa7d22f4933f220d44c45b5d0a703bf2107aa4afdcf95d47259b45945f3bf102fc12a30526c3991b8bd47a30cff82f0acef1e4c35f70907937ea55bd2503ebd82b32727ed73a308540b280d853a7f913665fd8b472d75f4a6b9d9b5e9637926ca9bd3bf6bdef06cad28bdead7f9be75e7a4c029eed945bf32963c9b1181ee969da0a2e1637f1cc3278b9db30ac8eb28c7e5b7d0df324653f40ab64ede6129ea80d4d9edb6a7b846cee9bd0f62248f27945956a52d2edafc706da0b80427ea59d4890cc3a9eb44d5c6b6ced4e194a98b70453589a8c6a14822788ba8cf66821a56c0e17a88f49ed2df36ca6a25a32aa2dee17ade2a11a73dfb6621d372b70205710c0f43fb8846a730b9117a6f75d8f09c815b3315f8da8e463baf8e378e04c98572cca1c2e5fc915ae2a7418e2098a62d16cec807efd347de9a305ce1ac4bb77e3d51d86c2977f871b039afcc3efab48571bbf3d546b7cfe780d01d1b883e038922e471524c42578a254ea773681397493116bf68a148c53064fa6ed8a06d925600ea4d823def5afbe9c8ca9146b4aa83fc95286053c474c167ad0b1878d09c79bfe833bbeb50686247e60b56e869ee1c182a029906a157adea7fad2d240400da2cbdf523187531d9fc7f9156d846a3f15d4923fd121bdef60d5202b7a7d15bdea9e50b4b1b66dc3b1f232205153b67afa60eff9e7b8367324878e82df747bf8842ac5c7c73ed210ab09ffa4a69f60b7c63a3c15f866870716fcc262373578e12cc4db5d7ed39ed7f2bc60e2aae7b7454e693dea4afda1839622982a929aa1fc3472a827f391cca4b414cf1647a7835323cb4b45cf8e63a8596d1a8c4f5aa734fa4fd9e46c0d3b9ec2b2e4b9d56b4399b2ad1a098f76b3dbadf5a5a3c557e9a0dd39ec6c517844f846a59d726cf75380711b5a7f9cc5e3e429358a963194ec936ab78d9d9d9f6b4451335f6d3f6568ab37b586618c1ede3e36c75e62623445d963158eec3949662c10760a15c4e6d354142a9d6c877734d0a32ed2ae1ab61596934dbcd841c9819835e77f58e246074a552c0ebc3405068f8c67598c1908621b8d76f527a5cf19a50490060f1a63d338f49734ccd3edbd4ea45fd164afbc4b72f8b3254ffbffb976a6d45d765c9abe462cee68ccf5f4d1b103478c82fcff2deb6c5375c9f95c2ff601853a14c220d21d6aa0c5462ef0087a0ac9e9e1329b5cfbcc2916b00997d06f3f0758dcea2cb15728a"
+    },
+    {
+      "from": "agent",
+      "seq": 1,
+      "message": {
+        "type": "state",
+        "state": "in_use",
+        "session": "unlocked",
+        "display_on": true,
+        "remote": [],
+        "busy": [],
+        "boot_time": 1762500000,
+        "power": {
+          "can_suspend": "yes",
+          "can_hibernate": "no",
+          "blockers": []
+        },
+        "keep_awake": {
+          "on": false,
+          "remaining": null,
+          "backend": "kde",
+          "applied": false
+        },
+        "brightness": {
+          "lux": 84.0,
+          "displays": {
+            "3f2a9c1b04de": {
+              "percent": 31,
+              "auto": true,
+              "overridden": false,
+              "target": 31,
+              "error": null
+            }
+          }
+        }
+      },
+      "frame": "01000000000000000194723ed3e16353328cbfd2952378674d3b916c4c37d3a8d65eea6a0033f0444d538820026dc59edb666f372dbdf807bdd31b5ba3cd30db55f7486ba70632154261557189124901058ddcc44cfec0ce327b1fdff048b5bc0b1e6bf7965dbac009623c0464fe10a5c1dacad23e7824112c2fa4e3618db553c4f2ae736357376e9bdffb237b6650df41ad32a1bc25a41009ca0fc2fc73729845ca6cf3df71d078f27654645a74733fc4d472371e6b24b3f3d3a03a63b2b5c68b22d4a5c78f9af2ce0184a74bc584e872d5283f81dc5f2116c8eb8473a99f9bc0b3ab163ab5481a112680919b7aca3c264a272b645e0ac6212f07187562d6524b517fe386dc8ff4a284627336ca3c8b28c809a8cde6edeb527db65979a7ad46b577ec717bbccc8767d5c274361359ed5bc686ef1535e65bd036a09098eeab489633d72a5a4aea1ee85e91b0e6918fa41b3af00ca42b7041fe9af90689add7ba9c47a71b5339bf41f82c04021d55e42309ecc245fb42655a8d596e36a7d9f7fceabf2dde688b77baf29449bff039657d12cde59c28fb2c"
+    },
+    {
+      "from": "ha",
+      "seq": 1,
+      "message": {
+        "type": "config",
+        "modules": {
+          "power": true,
+          "keep_awake": true,
+          "wake": true,
+          "brightness": true
+        },
+        "brightness": {
+          "lux": true,
+          "curve": {
+            "anchor_lux": 100.0,
+            "anchor_pct": 40,
+            "slope": 25.0,
+            "floor": 10,
+            "ceiling": 80
+          },
+          "auto": {
+            "3f2a9c1b04de": true
+          }
+        }
+      },
+      "frame": "0100000000000000014c5b073547825aabb7b2ca276231cc21be032bb3eaae4ac77d7e44ad8a3b63ecaf2107ba5689ff3cf9677348b04757a882f517290c69df44dfc0ae94982bad2cc583c33741b70859698f336342538b85b11242cee41f5e115a84331b00b427cc8d8c75e5ad101e1200ae483e61da0fa232871ada84408374b448c6ac8a0d7eb16ebd6828eb8d54f3e0a78969dab82c6f48d594a0d6fb2d25df4e3f6ff03cd585bb8c58c3952a865c41d295beaff00fff45a84bf5001aa72ccdb98ab9aa4f7837d625da650f9fc3b0a4c921f78194b64f1c05e11b0f1a9586e5f6c54e39db3ba4cc9d98ddc5c42a68c66ae3027e6ad936a3c184"
+    },
+    {
+      "from": "ha",
+      "seq": 2,
+      "message": {
+        "type": "input",
+        "name": "lux",
+        "value": 84.0,
+        "age": 12.5
+      },
+      "frame": "010000000000000002172a461d38d05492d6d219ee6be460655a8e160264c4b4155e409bd3bba7af762d44081c59518be3de1c32d90603a008d843c061e4aa8c8ce6efb795822d258bc352ab9060"
+    },
+    {
+      "from": "ha",
+      "seq": 3,
+      "message": {
+        "type": "command",
+        "id": "c1",
+        "name": "suspend",
+        "args": {
+          "force": false
+        }
+      },
+      "frame": "0100000000000000031c25676b7fa2ec838270936cbbbc0766e0bfbb7ec1b8b912a374f698fcaeb703c36b0bcdfa41962ef03008e0f7edd9dc43098c7f9aa876b47a132ae131360707638477df1903c060f891bab6cdf2cc08ef89610f"
+    },
+    {
+      "from": "agent",
+      "seq": 2,
+      "message": {
+        "type": "result",
+        "id": "c1",
+        "ok": false,
+        "error": {
+          "code": "refused",
+          "message": "1 app blocks sleep",
+          "blockers": [
+            {
+              "who": "Example Player",
+              "why": "Playing video",
+              "what": "sleep"
+            }
+          ]
+        }
+      },
+      "frame": "010000000000000002178e177fdab63d4ae3855cdea7de98fff68c715411f39aebd53ec3daeb1f5f9525d3ecc80cf017bd71d9925a789e140752609947043b02f9995afded2ca042cba9a52dadffb316199d18625fa73041488a3df248877db398e44599d31267679d04f7d3752b816a11a3817b0aa389dd6158024c13832e83da0f0070eb9a801f9a47f14bdd4670070206d9ba62f82540dfc04e06c0e9122113630bb4c926f142eaa25d48ca9fd08f8e40906e4754c5cda328ee3c63343b9673ece593"
+    },
+    {
+      "from": "ha",
+      "seq": 4,
+      "message": {
+        "type": "command",
+        "id": "c2",
+        "name": "brightness_set",
+        "args": {
+          "display": "3f2a9c1b04de",
+          "percent": 45
+        }
+      },
+      "frame": "010000000000000004c2f9b28265ef6609de4d76b85a566a58af4667a4c21dfe5f190d7a0c433308a3e8f3761468749c7d0422dbafc1cbf736c22d62cb9d29fe2ee8e889de7531b4fcb3046e76b2b2a04ed7602b93d84e35c545b4fe17ba9caaf5871adfc31eb9c6d9f79cb2c43f554bd76cd05c806ff47f6e5e4f8e"
+    },
+    {
+      "from": "agent",
+      "seq": 3,
+      "message": {
+        "type": "result",
+        "id": "c2",
+        "ok": true,
+        "data": {
+          "percent": 45
+        }
+      },
+      "frame": "0100000000000000036ac7cb1fb1993a7649af51b02811a173b74163c1c5cb528975a9f041509bfb2a286ede71c062790b0f5324987f09455994befcba4cacbe9b581fe781768f0f90aa1e3f4a443c6917622e25"
+    },
+    {
+      "from": "ha",
+      "seq": 5,
+      "message": {
+        "type": "command",
+        "id": "c3",
+        "name": "keep_awake",
+        "args": {
+          "on": true,
+          "for": 43200
+        }
+      },
+      "frame": "0100000000000000058d7089f3b5e9fa92bc19e4bc4075eebb4abad99995e118c6e3f38b2739d71573dced14b8cf48d3f3f60ddc3fbd071c592261bc6baf298106aeeaa77f0b4c528b954110a672e55b9171517351bf61d489d5d2cacb8a650dbba3d0a33e17264e"
+    },
+    {
+      "from": "agent",
+      "seq": 4,
+      "message": {
+        "type": "result",
+        "id": "c3",
+        "ok": true,
+        "data": {}
+      },
+      "frame": "010000000000000004b416c90ca39c2744995e079443967abc716a4ad8afe56b1a86d8b0278c45f2144be45325fff90e34ae7cd6168d411430309921edc680337d5081cc5f988a65"
+    },
+    {
+      "from": "agent",
+      "seq": 5,
+      "message": {
+        "type": "ping",
+        "t": 1
+      },
+      "frame": "0100000000000000056819156207ac34fe12bed7751cf4d70116e336aba062e6e2665dc64f1de6ea3a2363b7f488"
+    },
+    {
+      "from": "ha",
+      "seq": 6,
+      "message": {
+        "type": "pong",
+        "t": 1
+      },
+      "frame": "010000000000000006c6384381802d4b866a43817af2bf448375fc76ac7e7cd3075319ff9567174ad097fb9105b2"
+    },
+    {
+      "from": "agent",
+      "seq": 6,
+      "message": {
+        "type": "going_down",
+        "id": "g1",
+        "kind": "sleep"
+      },
+      "frame": "010000000000000006d5185f34f410775bb2dfe7ab8c13ddacdbaf29247bbfe5da24a6ce3a05fc6a0143d4ac87e5ab94f87c74b89a68528e97cb7e13d8fd188171f69d0ec1740f"
+    },
+    {
+      "from": "ha",
+      "seq": 7,
+      "message": {
+        "type": "ack",
+        "id": "g1"
+      },
+      "frame": "0100000000000000077ada7c4ae392372169c1482d7b219c025cd132250f5314e7119d555d3df59c1121c4ba8aa14f51ed"
+    }
+  ]
+}

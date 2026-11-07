@@ -1,0 +1,328 @@
+{
+  "checked": [
+    {
+      "sender": "agent",
+      "pairing": false,
+      "message": {
+        "type": "state",
+        "state": "idle"
+      },
+      "ok": true
+    },
+    {
+      "sender": "agent",
+      "pairing": false,
+      "message": {
+        "type": "event",
+        "name": "resumed"
+      },
+      "ok": true
+    },
+    {
+      "sender": "agent",
+      "pairing": false,
+      "message": {
+        "type": "event",
+        "name": "something_newer"
+      },
+      "ok": true
+    },
+    {
+      "sender": "agent",
+      "pairing": false,
+      "message": {
+        "type": "result",
+        "id": "c1",
+        "ok": false,
+        "error": {
+          "code": "refused"
+        }
+      },
+      "ok": true
+    },
+    {
+      "sender": "agent",
+      "pairing": false,
+      "message": {
+        "type": "a_type_from_a_newer_agent",
+        "x": 1
+      },
+      "ok": true
+    },
+    {
+      "sender": "ha",
+      "pairing": false,
+      "message": {
+        "type": "input",
+        "name": "lux",
+        "value": null,
+        "age": 0
+      },
+      "ok": true
+    },
+    {
+      "sender": "ha",
+      "pairing": false,
+      "message": {
+        "type": "input",
+        "name": "lux",
+        "value": 3,
+        "age": 0.5
+      },
+      "ok": true
+    },
+    {
+      "sender": "ha",
+      "pairing": false,
+      "message": {
+        "type": "command",
+        "id": "c9",
+        "name": "a_newer_command",
+        "args": {}
+      },
+      "ok": true
+    },
+    {
+      "sender": "ha",
+      "pairing": true,
+      "message": {
+        "type": "paired",
+        "id": "p1"
+      },
+      "ok": true
+    },
+    {
+      "sender": "agent",
+      "pairing": true,
+      "message": {
+        "type": "ack",
+        "id": "p1"
+      },
+      "ok": true
+    },
+    {
+      "sender": "ha",
+      "pairing": true,
+      "message": {
+        "type": "ping",
+        "t": 3.5
+      },
+      "ok": true
+    },
+    {
+      "sender": "ha",
+      "pairing": false,
+      "message": {
+        "type": "state",
+        "state": "idle"
+      },
+      "ok": false,
+      "close": 4400
+    },
+    {
+      "sender": "agent",
+      "pairing": false,
+      "message": {
+        "type": "command",
+        "id": "c1",
+        "name": "lock",
+        "args": {}
+      },
+      "ok": false,
+      "close": 4400
+    },
+    {
+      "sender": "agent",
+      "pairing": false,
+      "message": {
+        "type": "state",
+        "state": 3
+      },
+      "ok": false,
+      "close": 4400
+    },
+    {
+      "sender": "agent",
+      "pairing": false,
+      "message": {
+        "type": "result",
+        "id": "c1",
+        "ok": false
+      },
+      "ok": false,
+      "close": 4400
+    },
+    {
+      "sender": "agent",
+      "pairing": false,
+      "message": {
+        "type": "result",
+        "id": "c1",
+        "ok": false,
+        "error": {
+          "message": "no code"
+        }
+      },
+      "ok": false,
+      "close": 4400
+    },
+    {
+      "sender": "agent",
+      "pairing": false,
+      "message": {
+        "type": "result",
+        "id": "c1",
+        "ok": "yes"
+      },
+      "ok": false,
+      "close": 4400
+    },
+    {
+      "sender": "agent",
+      "pairing": false,
+      "message": {
+        "type": "ping",
+        "t": true
+      },
+      "ok": false,
+      "close": 4400
+    },
+    {
+      "sender": "ha",
+      "pairing": false,
+      "message": {
+        "type": "input",
+        "name": "lux",
+        "value": "84",
+        "age": 0
+      },
+      "ok": false,
+      "close": 4400
+    },
+    {
+      "sender": "ha",
+      "pairing": false,
+      "message": {
+        "type": "input",
+        "name": "lux",
+        "value": 84
+      },
+      "ok": false,
+      "close": 4400
+    },
+    {
+      "sender": "ha",
+      "pairing": false,
+      "message": {
+        "type": "command",
+        "id": "c1",
+        "name": "lock",
+        "args": []
+      },
+      "ok": false,
+      "close": 4400
+    },
+    {
+      "sender": "agent",
+      "pairing": true,
+      "message": {
+        "type": "state",
+        "state": "idle"
+      },
+      "ok": false,
+      "close": 4400
+    },
+    {
+      "sender": "ha",
+      "pairing": true,
+      "message": {
+        "type": "command",
+        "id": "c1",
+        "name": "lock",
+        "args": {}
+      },
+      "ok": false,
+      "close": 4400
+    }
+  ],
+  "undecodable": [
+    "[]",
+    "{\"type\":\"\"}",
+    "{\"no_type\":1}",
+    "{\"type\":\"ping\",\"t\":NaN}",
+    "{\"type\":\"ping\",\"t\":1e999}",
+    "ÿ"
+  ],
+  "retry": [
+    {
+      "close": null,
+      "failures": 1,
+      "delay": 2.0
+    },
+    {
+      "close": null,
+      "failures": 2,
+      "delay": 4.0
+    },
+    {
+      "close": null,
+      "failures": 5,
+      "delay": 32.0
+    },
+    {
+      "close": null,
+      "failures": 6,
+      "delay": 60.0
+    },
+    {
+      "close": null,
+      "failures": 40,
+      "delay": 60.0
+    },
+    {
+      "close": 1006,
+      "failures": 3,
+      "delay": 8.0
+    },
+    {
+      "close": 4000,
+      "failures": 9,
+      "delay": 1.0
+    },
+    {
+      "close": 4401,
+      "failures": 1,
+      "delay": 900.0
+    },
+    {
+      "close": 4403,
+      "failures": 1,
+      "delay": 900.0
+    },
+    {
+      "close": 4409,
+      "failures": 1,
+      "delay": 60.0
+    },
+    {
+      "close": 4426,
+      "failures": 1,
+      "delay": 3600.0
+    },
+    {
+      "close": 4429,
+      "failures": 1,
+      "delay": 300.0
+    },
+    {
+      "close": 4503,
+      "failures": 1,
+      "delay": 60.0
+    },
+    {
+      "close": 404,
+      "failures": 1,
+      "delay": 2.0
+    }
+  ]
+}

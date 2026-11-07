@@ -1,0 +1,75 @@
+[project]
+name = "torpor"
+version = "0.1.0"
+description = "Let Home Assistant see, sleep, wake and dim your Linux PC"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Claudio Wunder", email = "cwunder@gnome.org" }]
+requires-python = ">=3.12"
+# PyGObject and the GLib, Gio and Soup 3 typelibs come from distro packages (docs/install.md);
+# they have no usable wheels, so they are not listed here.
+dependencies = ["cryptography>=41"]
+keywords = ["home-assistant", "linux", "systemd", "logind", "suspend", "wake-on-lan", "brightness", "ddc-ci"]
+classifiers = [
+    "Environment :: No Input/Output (Daemon)",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Topic :: Home Automation",
+    "Topic :: System :: Power (UPS)",
+]
+
+[project.urls]
+Repository = "https://github.com/ovflowd/torpor"
+
+[project.scripts]
+torpord = "torpor.agent:main"
+torporctl = "torpor.cli:main"
+
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["torpor*"]
+
+[tool.setuptools.package-data]
+torpor = ["units/*"]
+
+[dependency-groups]
+dev = [
+    "mypy>=1.13",
+    "pytest>=8",
+    "ruff>=0.8",
+]
+
+[tool.pytest.ini_options]
+pythonpath = [".", "tests"]
+testpaths = ["tests"]
+# PyGObject's own warnings while it loads its GLib overrides, not about Torpor's code.
+filterwarnings = ["ignore::DeprecationWarning:gi.events", "ignore:GLib.unix_signal_add_full is deprecated"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "SIM", "RUF"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["torpor", "conftest", "fakes"]
+
+[tool.mypy]
+files = ["torpor"]
+python_version = "3.12"
+strict = true
+warn_unreachable = true
+
+[[tool.mypy.overrides]]
+module = ["gi", "gi.*"]
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = ["torpor.glib"]
+disallow_any_unimported = false
+warn_return_any = false
